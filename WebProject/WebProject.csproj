@@ -43,6 +43,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CsvHelper, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
+      <HintPath>..\packages\CsvHelper.2.16.3.0\lib\net45\CsvHelper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -399,9 +403,22 @@
     <Compile Include="Migrations\201611081139575_Initial.Designer.cs">
       <DependentUpon>201611081139575_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611171339073_Tables.cs" />
+    <Compile Include="Migrations\201611171339073_Tables.Designer.cs">
+      <DependentUpon>201611171339073_Tables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611171500338_Tablesv1.cs" />
+    <Compile Include="Migrations\201611171500338_Tablesv1.Designer.cs">
+      <DependentUpon>201611171500338_Tablesv1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\MasterContext.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderDetails.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\ProductsDelivered.cs" />
     <Compile Include="Products.aspx.cs">
       <DependentUpon>Products.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -435,10 +452,17 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Migrations\SiteMigrations\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201611081139575_Initial.resx">
       <DependentUpon>201611081139575_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611171339073_Tables.resx">
+      <DependentUpon>201611171339073_Tables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611171500338_Tablesv1.resx">
+      <DependentUpon>201611171500338_Tablesv1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

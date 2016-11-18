@@ -26,6 +26,7 @@ namespace WebProject
                 customer.CardType = ddlCardType.SelectedValue;
                 customer.CardNumber = txtCardNumber.Text;
                 customer.ExpirationDate = txtExpiration.Text;
+
                 Session.Remove("Cart");
                 Response.Redirect("~/Confirmation.aspx");
             }

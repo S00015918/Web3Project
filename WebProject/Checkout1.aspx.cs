@@ -27,8 +27,7 @@ namespace WebProject
                 customer.EmailAddress = txtEmail.Text;
                 customer.Address = txtAddress.Text;
                 customer.City = txtCity.Text;
-                customer.State = txtState.Text;
-                customer.Zip = txtZip.Text;
+                customer.County = txtState.Text;
                 customer.Phone = txtPhone.Text;
                 Session["Customer"] = customer;
                 Response.Redirect("~/CheckOut2.aspx");
