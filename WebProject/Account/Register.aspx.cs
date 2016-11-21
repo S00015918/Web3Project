@@ -34,7 +34,9 @@ namespace WebProject.Account
                 LastName = Surname.Text,
                 EmailAddress = Email.Text,
                 Phone = Phone.Text,
-                Password = Password.Text
+                Password = Password.Text,
+                Address = Address.Text
+                
             });
             ctx.SaveChanges();
 

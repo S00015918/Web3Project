@@ -24,10 +24,10 @@ namespace WebProject.Models
         public string Address { get; set; }
         public string City { get; set; }
         public string County { get; set; }
-        //public string ShippingMethod { get; set; }
-        //public string CardType { get; set; }
-        //public string CardNumber { get; set; }
-        //public string ExpirationDate { get; set; }
+        public string ShippingMethod { get; set; }
+        public string CardType { get; set; }
+        public string CardNumber { get; set; }
+        public string ExpirationDate { get; set; }
         public virtual ICollection<Order> Orders { get; set; }
 
     }
