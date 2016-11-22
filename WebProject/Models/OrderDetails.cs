@@ -21,5 +21,14 @@ namespace WebProject.Models
         public double UnitPrice { get; set; }
         public virtual Order order { get; set; }
         public virtual Product product { get; set; }
+
+        public static OrderDetails GetCart()
+        {
+            OrderDetails cart = (OrderDetails)HttpContext.Current.Session["Cart"];
+            if (cart == null)
+                HttpContext.Current.Session["Cart"] = new OrderDetails();
+            return (OrderDetails)HttpContext.Current.Session["Cart"];
+        }
+
     }
 }

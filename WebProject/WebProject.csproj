@@ -182,14 +182,22 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="EditPoster.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Images\Products\Borat.jpg" />
+    <Content Include="Images\Products\DarkKnight.jpg" />
+    <Content Include="Images\Products\FindingDory.jpg" />
+    <Content Include="Images\Products\Interstellar.jpg" />
+    <Content Include="Images\Products\LordOfWar.jpg" />
     <Content Include="Images\monsterLogo2.jpg" />
+    <Content Include="Images\Products\RockyV.jpg" />
+    <Content Include="Images\Products\TheForceAwakens.jpg" />
+    <Content Include="Images\Products\TheMartian.jpg" />
+    <Content Include="Images\Products\Thor.jpg" />
     <Content Include="Products.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -224,7 +232,6 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
-    <Content Include="StyleSheet1.css" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -398,13 +405,6 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="EditPoster.aspx.cs">
-      <DependentUpon>EditPoster.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="EditPoster.aspx.designer.cs">
-      <DependentUpon>EditPoster.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -420,7 +420,17 @@
     <Compile Include="Migrations\201611171500338_Tablesv1.Designer.cs">
       <DependentUpon>201611171500338_Tablesv1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611221139352_ProductImage.cs" />
+    <Compile Include="Migrations\201611221139352_ProductImage.Designer.cs">
+      <DependentUpon>201611221139352_ProductImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611221311115_ProductID.cs" />
+    <Compile Include="Migrations\201611221311115_ProductID.Designer.cs">
+      <DependentUpon>201611221311115_ProductID.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\CartItem.cs" />
+    <Compile Include="Models\CartItemList.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\MasterContext.cs" />
@@ -472,6 +482,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611171500338_Tablesv1.resx">
       <DependentUpon>201611171500338_Tablesv1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611221139352_ProductImage.resx">
+      <DependentUpon>201611221139352_ProductImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611221311115_ProductID.resx">
+      <DependentUpon>201611221311115_ProductID.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -36,3 +36,9 @@ input[type="select"] {
         padding: 0;
     }
 }
+
+.myCarouselImg img {
+  width: auto;
+  height: 225px;
+  max-height: 225px;
+}

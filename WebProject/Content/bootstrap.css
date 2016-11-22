@@ -7044,3 +7044,21 @@ a.list-group-item-danger.active:focus {
 .panel-default > .panel-heading {
   background-color: #464545;
 }
+
+/*.carousel {
+   width: auto;
+  height: 100px;
+  max-height: 225px;
+}
+
+.carousel-inner {
+   width: auto;
+  height: 100px;
+  max-height: 225px;
+}
+
+.myCarouselImg img {
+  width: auto;
+  height: 100px;
+  max-height: 225px;
+}*/
