@@ -13,8 +13,7 @@ namespace WebProject.Models
     public class Product
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ProductID { get; set; }
+        public string ProductID { get; set; }
         public string ProductName { get; set; }
         public int QuantityInStock { get; set; }
         public string ImageFile { get; set; }

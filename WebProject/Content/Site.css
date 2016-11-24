@@ -42,3 +42,8 @@ input[type="select"] {
   height: 225px;
   max-height: 225px;
 }
+
+.posterImage {
+    width: 300px;
+    height: 300px;
+}

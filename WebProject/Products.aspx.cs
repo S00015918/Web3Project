@@ -33,8 +33,7 @@ namespace WebProject
                 if (cartItem == null)
                 {
                     cart.AddItem(selectedProduct,
-                                 Convert.ToInt32(txtQuantity.Text),
-                                 Convert.ToInt32(selectedProduct.Price));
+                                 Convert.ToInt32(txtQuantity.Text), selectedProduct.Price);
                 }
                 else
                 {
@@ -60,17 +59,12 @@ namespace WebProject
 
             //create a new product object and load with data from row
             Product p = new Product();
-            //p.ProductID = row["ProductID"].ToString();
+            p.ProductID = row["ProductID"].ToString();
             p.ProductName = row["ProductName"].ToString();
             p.Price = (decimal)row["Price"];
             p.QuantityInStock = (int)row["QuantityInStock"];
             p.ImageFile = row["ImageFile"].ToString();
             return p;
-        }
-
-        protected void btnCheckOut_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

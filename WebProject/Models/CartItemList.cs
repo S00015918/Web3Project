@@ -29,7 +29,7 @@ public class CartItemList
         get
         {
             foreach (CartItem c in cartItems)
-                if ( c.Product.ProductID == Convert.ToInt32(id)) return c;
+                if (c.Product.ProductID == id) return c;
             return null;
         }
     }

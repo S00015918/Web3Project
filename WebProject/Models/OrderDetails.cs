@@ -16,7 +16,7 @@ namespace WebProject.Models
         [ForeignKey("order"), Column(Order = 0)]
         public int OrderID { get; set; }
         [ForeignKey("product"), Column(Order = 1)]
-        public int ProductID { get; set; }
+        public string ProductID { get; set; }
         public int Quantity { get; set; }
         public double UnitPrice { get; set; }
         public virtual Order order { get; set; }

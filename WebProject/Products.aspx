@@ -1,9 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Products.aspx.cs" Inherits="WebProject.Products" %>
 <asp:Content ID="MainContent" ContentPlaceHolderID="mainPlaceholder" runat="server">
-
     <div class="row">
         <div class="col-sm-8">
             <div class="form-group">
+                <br />
+                <br />
+                <br />
                 <label class="col-sm-6">Please select a product:</label>
                 <div class="col-sm-6">
                     <asp:DropDownList ID="ddlProducts" runat="server" AutoPostBack="True" 
@@ -22,8 +24,9 @@
             <div class="form-group">
                 <div class="col-sm-12"><asp:Label ID="lblUnitPrice" runat="server"></asp:Label></div></div>
         </div>
+        <br />
         <div class="col-sm-4">
-            <asp:Image ID="imgProduct" runat="server" />
+            <asp:Image ID="imgProduct" CssClass="posterImage" Height="300" Width="300" runat="server" />
         </div>
     </div>
     <div class="row">
@@ -49,8 +52,7 @@
                         onclick="btnAdd_Click" CssClass="btn" />
                     <asp:Button ID="btnCart" runat="server" Text="Go to Cart" 
                         PostBackUrl="~/Cart.aspx" CausesValidation="False" CssClass="btn" OnClick="btnCart_Click" />
-                    <asp:Button ID="btnCheckOut" runat="server" Text="Check Out" 
-                        PostBackUrl="~/CheckOut1.aspx" CausesValidation="False" CssClass="btn" OnClick="btnCheckOut_Click" />
+
                 </div>
             </div>
         </div>

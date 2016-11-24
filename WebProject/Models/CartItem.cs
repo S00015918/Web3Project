@@ -12,13 +12,15 @@ public class CartItem
     {
         this.Product = product;
         this.Quantity = quantity;
-        this.UnitPrice = price;
+        this.Price = price;
     }
 
     public Product Product { get; set; }
     public int Quantity { get; set; }
 
-    public decimal UnitPrice { get; set; }
+    public decimal Price { get; set; }
+
+    
 
     public void AddQuantity(int quantity)
     {
@@ -27,13 +29,10 @@ public class CartItem
 
     public string Display()
     {
-        decimal totalPrice = Quantity * UnitPrice;
-
-        string displayString = string.Format("{0} ({1} at {2}. Total Cost: {3})",
+        string displayString = string.Format("{0} ({1} at {2})",
             Product.ProductName, 
             Quantity.ToString(),
-            Product.Price.ToString("c"),
-            totalPrice.ToString("c")
+            Product.Price.ToString("c")
         );
         return displayString;
     }
