@@ -24,7 +24,7 @@ namespace WebProject
         {
             if (posterUpload.HasFile)
             {
-                string savePath = "E:/College/ThirdYear/Web Programming/WebProject/Web3Project-master/WebProject/Images/";
+                string savePath = "E:/College/ThirdYear/Web Programming/WebProject/Web3Project-master/WebProject/Images/"; //Temporary until database is implemented!
                 string fileName = posterUpload.FileName;
                 string pathToCheck = savePath + fileName;
                 string tempFileName = "";
@@ -42,12 +42,16 @@ namespace WebProject
 
                     fileName = tempFileName;
 
-                    outputLabel.Text = "Image uploaded!";
+                    outputLabel.Text = string.Format("Image uploaded as {0}!", fileName);
+                    outputLabel.CssClass = "alert alert-success";
+                    btnUpload.CssClass = "btn btn-primary disabled";
 
                 }//end if
                 else
                 {
                     outputLabel.Text = "Image uploaded!";
+                    outputLabel.CssClass = "alert alert-success";
+                    btnUpload.CssClass = "btn btn-primary disabled";
                 }//end else
 
                 savePath += fileName;
@@ -59,72 +63,94 @@ namespace WebProject
             else
             {
                 outputLabel.Text = "You must select an image!";
+                outputLabel.CssClass = "alert alert-danger";
             }//end else
 
-            filterList_SelectedIndexChanged(sender, e);
-
+            filterListFinal_SelectedIndexChanged(sender, e);
+            sizeListFinal_SelectedIndexChanged(sender, e);
 
         }//end uploadImage_Click
 
 
 
-        protected void filterList_SelectedIndexChanged(object sender, EventArgs e)
+
+        protected void btnApplyChanges_Click(object sender, EventArgs e)
         {
 
-            if (filterList.SelectedValue == "1")
+        }//end btnapply
+
+        protected void filterListFinal_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (filterListFinal.SelectedValue == "1")
             {
-                // imageDisplay.
+                imageDisplay.CssClass = "image1";
             }
-            else if (filterList.SelectedValue == "2")
+            else if (filterListFinal.SelectedValue == "2")
             {
-
+                imageDisplay.CssClass = "image2";
             }
-            else if (filterList.SelectedValue == "3")
+            else if (filterListFinal.SelectedValue == "3")
             {
-
+                imageDisplay.CssClass = "image3";
             }
-            else if (filterList.SelectedValue == "4")
+            else if (filterListFinal.SelectedValue == "4")
             {
-
+                imageDisplay.CssClass = "image4";
             }
-            else if (filterList.SelectedValue == "5")
+            else if (filterListFinal.SelectedValue == "5")
             {
-
+                imageDisplay.CssClass = "image5";
+            }
+            else if (filterListFinal.SelectedValue == "6")
+            {
+                imageDisplay.CssClass = "image6";
+            }
+            else if (filterListFinal.SelectedValue == "7")
+            {
+                imageDisplay.CssClass = "image7";
+            }
+            else if (filterListFinal.SelectedValue == "8")
+            {
+                imageDisplay.CssClass = "image8";
+            }
+            else
+            {
+                imageDisplay.CssClass = "";
             }
 
-        }//end filterlist_selectedindexchanged
+        }//end filterlistfinal_selectedindexchanged
 
-        //private static Bitmap ApplyColorMatrix(Image sourceImage, ColorMatrix colorMatrix)
-        //{
-        //    Bitmap bmp32BppSource = GetArgbCopy(sourceImage);
-        //    Bitmap bmp32BppDest = new Bitmap(bmp32BppSource.Width, bmp32BppSource.Height, PixelFormat.Format32bppArgb);
+        protected void sizeListFinal_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //test values
+            if (sizeListFinal.SelectedValue == "1")
+            {
+                imageDisplay.Width = 400;
+                imageDisplay.Height = 200;
+            }
+            else if (sizeListFinal.SelectedValue == "2")
+            {
+                imageDisplay.Width = 400;
+                imageDisplay.Height = 750;
+            }
+            else if (sizeListFinal.SelectedValue == "3")
+            {
+                imageDisplay.Width = 600;
+                imageDisplay.Height = 400;
+            }
+            else if (sizeListFinal.SelectedValue == "4")
+            {
+                imageDisplay.Height = 800;
+                imageDisplay.Width = 600;
+            }
+            else
+            {
+                imageDisplay.Height = 500;
+                imageDisplay.Width = 800;
+            }
 
-        //    using (Graphics graphics = Graphics.FromImage(bmp32BppDest))
-        //    {
-        //        ImageAttributes bmpAttributes = new ImageAttributes();
-        //        bmpAttributes.SetColorMatrix(colorMatrix);
 
-        //        graphics.DrawImage(bmp32BppSource, new Rectangle(0, 0, bmp32BppSource.Width, bmp32BppSource.Height),
-        //            0, 0, bmp32BppSource.Width, bmp32BppSource.Height, GraphicsUnit.Pixel, bmpAttributes);
-        //    }//end using
-        //    bmp32BppSource.Dispose();
-        //    return bmp32BppDest;
-
-        //}//end applycolormatrix
-
-
-        //public static Bitmap DrawAsNegative(this System.Drawing.Image sourceImage)
-        //{
-        //    ColorMatrix colorMatrix = new ColorMatrix(new float[][]
-        //    {
-        //        new float[] {-1, 0, 0, 0, 0},
-        //        new float[] {0, -1, 0, 0 ,0},
-        //        new float[] {0, 0, -1, 0, 0},
-        //        new float[] {1, 1, 1, 1, 1}
-        //    });
-
-        //    return ApplyColorMatrix(sourceImage, colorMatrix);
-        //}
+        }//end sizelist selected index changed
 
 
 
