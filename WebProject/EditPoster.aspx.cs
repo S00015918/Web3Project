@@ -81,35 +81,35 @@ namespace WebProject
 
         protected void filterListFinal_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (filterListFinal.SelectedValue == "1")
+            if (filterList.SelectedValue == "1")
             {
                 imageDisplay.CssClass = "image1";
             }
-            else if (filterListFinal.SelectedValue == "2")
+            else if (filterList.SelectedValue == "2")
             {
                 imageDisplay.CssClass = "image2";
             }
-            else if (filterListFinal.SelectedValue == "3")
+            else if (filterList.SelectedValue == "3")
             {
                 imageDisplay.CssClass = "image3";
             }
-            else if (filterListFinal.SelectedValue == "4")
+            else if (filterList.SelectedValue == "4")
             {
                 imageDisplay.CssClass = "image4";
             }
-            else if (filterListFinal.SelectedValue == "5")
+            else if (filterList.SelectedValue == "5")
             {
                 imageDisplay.CssClass = "image5";
             }
-            else if (filterListFinal.SelectedValue == "6")
+            else if (filterList.SelectedValue == "6")
             {
                 imageDisplay.CssClass = "image6";
             }
-            else if (filterListFinal.SelectedValue == "7")
+            else if (filterList.SelectedValue == "7")
             {
                 imageDisplay.CssClass = "image7";
             }
-            else if (filterListFinal.SelectedValue == "8")
+            else if (filterList.SelectedValue == "8")
             {
                 imageDisplay.CssClass = "image8";
             }
@@ -123,22 +123,22 @@ namespace WebProject
         protected void sizeListFinal_SelectedIndexChanged(object sender, EventArgs e)
         {
             //test values
-            if (sizeListFinal.SelectedValue == "1")
+            if (sizeList.SelectedValue == "1")
             {
                 imageDisplay.Width = 400;
                 imageDisplay.Height = 200;
             }
-            else if (sizeListFinal.SelectedValue == "2")
+            else if (sizeList.SelectedValue == "2")
             {
                 imageDisplay.Width = 400;
                 imageDisplay.Height = 750;
             }
-            else if (sizeListFinal.SelectedValue == "3")
+            else if (sizeList.SelectedValue == "3")
             {
                 imageDisplay.Width = 600;
                 imageDisplay.Height = 400;
             }
-            else if (sizeListFinal.SelectedValue == "4")
+            else if (sizeList.SelectedValue == "4")
             {
                 imageDisplay.Height = 800;
                 imageDisplay.Width = 600;

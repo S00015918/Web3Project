@@ -31,6 +31,15 @@ namespace WebProject {
         protected global::System.Web.UI.WebControls.FileUpload posterUpload;
         
         /// <summary>
+        /// btnUpload control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnUpload;
+        
+        /// <summary>
         /// outputLabel control.
         /// </summary>
         /// <remarks>
@@ -46,6 +55,15 @@ namespace WebProject {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList filterList;
+        protected global::System.Web.UI.WebControls.RadioButtonList filterList;
+        
+        /// <summary>
+        /// sizeList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList sizeList;
     }
 }

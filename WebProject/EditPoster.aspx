@@ -61,7 +61,7 @@
     
     <h3>Image Filters</h3>
     <div id="FilterDiv" class="panel panel-primary">
-    <asp:RadioButtonList id="filterListFinal" OnSelectedIndexChanged="filterListFinal_SelectedIndexChanged" runat="server">
+    <asp:RadioButtonList id="filterList" OnSelectedIndexChanged="filterListFinal_SelectedIndexChanged" runat="server">
          <asp:ListItem Value="1">Blur</asp:ListItem>
         <asp:ListItem Value="2">Contrast</asp:ListItem>
          <asp:ListItem Value="3">Invert</asp:ListItem>
@@ -75,7 +75,7 @@
 
     <h3>Poster Size</h3>
     <div class="panel panel-default">
-    <asp:RadioButtonList runat="server" ID="sizeListFinal" OnSelectedIndexChanged="sizeListFinal_SelectedIndexChanged">
+    <asp:RadioButtonList runat="server" ID="sizeList" OnSelectedIndexChanged="sizeListFinal_SelectedIndexChanged">
         <asp:ListItem Value="1">A3</asp:ListItem>
         <asp:ListItem Value="3">A2</asp:ListItem>
         <asp:ListItem Value="4">A1</asp:ListItem>
