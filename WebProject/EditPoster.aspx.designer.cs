@@ -22,30 +22,21 @@ namespace WebProject {
         protected global::System.Web.UI.WebControls.Image imageDisplay;
         
         /// <summary>
-        /// posterUpload control.
+        /// filterListFinal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload posterUpload;
+        protected global::System.Web.UI.WebControls.RadioButtonList filterListFinal;
         
         /// <summary>
-        /// outputLabel control.
+        /// sizeListFinal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label outputLabel;
-        
-        /// <summary>
-        /// filterList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList filterList;
+        protected global::System.Web.UI.WebControls.RadioButtonList sizeListFinal;
     }
 }

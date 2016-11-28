@@ -43,21 +43,13 @@
     </style>
 
 
-    <h1>Upload Poster</h1>
+    <h1>Edit Poster</h1>
 
     <div class="img-thumbnail">
     <asp:Image ImageUrl="~/Images/placeholder.png" id="imageDisplay" height="500" Width="800" runat="server"/> 
     </div>
 
-    <div>
-    <asp:FileUpload name="posterUpload" CssClass="btn btn-primary" ID="posterUpload" runat="server" accept=".jpg, .png"/>
-    </div></br>
-
-    <div id="test" class="test">
-     <asp:Button text="Upload image" ID="btnUpload" runat="server" CssClass="btn btn-primary btn-md" name="btnUploadImage" OnClick="uploadImage_Click"/>
-    
-    <asp:Label ID="outputLabel" runat="server"/>
-    </div>
+   
     
     <h3>Image Filters</h3>
     <div id="FilterDiv" class="panel panel-primary">
