@@ -20,62 +20,12 @@ namespace WebProject
 
         }//end pageLoad
 
-        protected void uploadImage_Click(object sender, EventArgs e)
-        {
-            if (posterUpload.HasFile)
-            {
-                string savePath = "E:/College/ThirdYear/Web Programming/WebProject/Web3Project-master/WebProject/Images/"; //Temporary until database is implemented!
-                string fileName = posterUpload.FileName;
-                string pathToCheck = savePath + fileName;
-                string tempFileName = "";
-
-                if (System.IO.File.Exists(pathToCheck))
-                {
-                    int counter = 2;
-
-                    while (System.IO.File.Exists(pathToCheck))
-                    {
-                        tempFileName = counter.ToString() + fileName;
-                        pathToCheck = savePath + tempFileName;
-                        counter++;
-                    }//end while
-
-                    fileName = tempFileName;
-
-                    outputLabel.Text = string.Format("Image uploaded as {0}!", fileName);
-                    outputLabel.CssClass = "alert alert-success";
-                    btnUpload.CssClass = "btn btn-primary disabled";
-
-                }//end if
-                else
-                {
-                    outputLabel.Text = "Image uploaded!";
-                    outputLabel.CssClass = "alert alert-success";
-                    btnUpload.CssClass = "btn btn-primary disabled";
-                }//end else
-
-                savePath += fileName;
-
-                posterUpload.SaveAs(savePath);
-                imageDisplay.ImageUrl = "Images/" + fileName;
-
-            }//end if
-            else
-            {
-                outputLabel.Text = "You must select an image!";
-                outputLabel.CssClass = "alert alert-danger";
-            }//end else
-
-            filterListFinal_SelectedIndexChanged(sender, e);
-            sizeListFinal_SelectedIndexChanged(sender, e);
-
-        }//end uploadImage_Click
-
-
 
 
         protected void btnApplyChanges_Click(object sender, EventArgs e)
         {
+            filterListFinal_SelectedIndexChanged(sender, e);
+            sizeListFinal_SelectedIndexChanged(sender, e);
 
         }//end btnapply
 
@@ -130,8 +80,8 @@ namespace WebProject
             }
             else if (sizeList.SelectedValue == "2")
             {
-                imageDisplay.Width = 400;
-                imageDisplay.Height = 750;
+                imageDisplay.Height = 800;
+                imageDisplay.Width = 600;
             }
             else if (sizeList.SelectedValue == "3")
             {
@@ -140,8 +90,8 @@ namespace WebProject
             }
             else if (sizeList.SelectedValue == "4")
             {
-                imageDisplay.Height = 800;
-                imageDisplay.Width = 600;
+                imageDisplay.Height = 600;
+                imageDisplay.Width = 800;
             }
             else
             {
