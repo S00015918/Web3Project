@@ -43,17 +43,25 @@
     </style>
 
 
-    <h1>Edit Poster</h1>
+    <h1>Upload Poster</h1>
 
     <div class="img-thumbnail">
     <asp:Image ImageUrl="~/Images/placeholder.png" id="imageDisplay" height="500" Width="800" runat="server"/> 
     </div>
 
-   
+    <div>
+    <asp:FileUpload name="posterUpload" CssClass="btn btn-primary" ID="posterUpload" runat="server" accept=".jpg, .png"/>
+    </div></br>
+
+    <div id="test" class="test">
+     <asp:Button text="Upload image" ID="btnUpload" runat="server" CssClass="btn btn-primary btn-md" name="btnUploadImage" OnClick="uploadImage_Click"/>
+    
+    <asp:Label ID="outputLabel" runat="server"/>
+    </div>
     
     <h3>Image Filters</h3>
     <div id="FilterDiv" class="panel panel-primary">
-    <asp:RadioButtonList id="filterList" OnSelectedIndexChanged="filterListFinal_SelectedIndexChanged" runat="server">
+    <asp:RadioButtonList id="filterListFinal" OnSelectedIndexChanged="filterListFinal_SelectedIndexChanged" runat="server">
          <asp:ListItem Value="1">Blur</asp:ListItem>
         <asp:ListItem Value="2">Contrast</asp:ListItem>
          <asp:ListItem Value="3">Invert</asp:ListItem>
@@ -67,7 +75,7 @@
 
     <h3>Poster Size</h3>
     <div class="panel panel-default">
-    <asp:RadioButtonList runat="server" ID="sizeList" OnSelectedIndexChanged="sizeListFinal_SelectedIndexChanged">
+    <asp:RadioButtonList runat="server" ID="sizeListFinal" OnSelectedIndexChanged="sizeListFinal_SelectedIndexChanged">
         <asp:ListItem Value="1">A3</asp:ListItem>
         <asp:ListItem Value="3">A2</asp:ListItem>
         <asp:ListItem Value="4">A1</asp:ListItem>
