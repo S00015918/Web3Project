@@ -10,7 +10,7 @@
 namespace WebProject {
     
     
-    public partial class EditPoster {
+    public partial class UploadPoster {
         
         /// <summary>
         /// imageDisplay control.
@@ -31,13 +31,13 @@ namespace WebProject {
         protected global::System.Web.UI.WebControls.FileUpload posterUpload;
         
         /// <summary>
-        /// btnUpload control.
+        /// btnUploadImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnUpload;
+        protected global::System.Web.UI.WebControls.Button btnUploadImage;
         
         /// <summary>
         /// outputLabel control.
@@ -49,21 +49,12 @@ namespace WebProject {
         protected global::System.Web.UI.WebControls.Label outputLabel;
         
         /// <summary>
-        /// filterList control.
+        /// btnEditPoster control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList filterList;
-        
-        /// <summary>
-        /// sizeList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList sizeList;
+        protected global::System.Web.UI.WebControls.Button btnEditPoster;
     }
 }
