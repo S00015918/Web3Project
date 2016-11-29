@@ -13,6 +13,7 @@ public class CartItem
         this.Product = product;
         this.Quantity = quantity;
         this.Price = price;
+        this.TotalPrice = price * quantity;
     }
 
     public Product Product { get; set; }
@@ -20,7 +21,7 @@ public class CartItem
 
     public decimal Price { get; set; }
 
-    
+    public decimal TotalPrice;
 
     public void AddQuantity(int quantity)
     {
@@ -32,7 +33,8 @@ public class CartItem
         string displayString = string.Format("{0} ({1} at {2})",
             Product.ProductName, 
             Quantity.ToString(),
-            Product.Price.ToString("c")
+            Product.Price.ToString("c"),
+            TotalPrice.ToString()
         );
         return displayString;
     }

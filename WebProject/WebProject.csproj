@@ -174,6 +174,7 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="Admin_AddItemsPage.aspx" />
     <Content Include="Cart.aspx" />
     <Content Include="Checkout1.aspx" />
     <Content Include="Checkout2.aspx" />
@@ -198,6 +199,7 @@
     <Content Include="Images\Products\TheForceAwakens.jpg" />
     <Content Include="Images\Products\TheMartian.jpg" />
     <Content Include="Images\Products\Thor.jpg" />
+    <Content Include="JavaScript.js" />
     <Content Include="Products.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -352,6 +354,13 @@
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin_AddItemsPage.aspx.cs">
+      <DependentUpon>Admin_AddItemsPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_AddItemsPage.aspx.designer.cs">
+      <DependentUpon>Admin_AddItemsPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -424,9 +433,9 @@
     <Compile Include="Migrations\201611221139352_ProductImage.Designer.cs">
       <DependentUpon>201611221139352_ProductImage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201611221311115_ProductID.cs" />
-    <Compile Include="Migrations\201611221311115_ProductID.Designer.cs">
-      <DependentUpon>201611221311115_ProductID.cs</DependentUpon>
+    <Compile Include="Migrations\201611281405148_NewTables.cs" />
+    <Compile Include="Migrations\201611281405148_NewTables.Designer.cs">
+      <DependentUpon>201611281405148_NewTables.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CartItem.cs" />
@@ -486,8 +495,8 @@
     <EmbeddedResource Include="Migrations\201611221139352_ProductImage.resx">
       <DependentUpon>201611221139352_ProductImage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611221311115_ProductID.resx">
-      <DependentUpon>201611221311115_ProductID.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201611281405148_NewTables.resx">
+      <DependentUpon>201611281405148_NewTables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

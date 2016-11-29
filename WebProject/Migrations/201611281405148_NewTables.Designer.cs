@@ -7,13 +7,13 @@ namespace WebProject.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class ProductID : IMigrationMetadata
+    public sealed partial class NewTables : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ProductID));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(NewTables));
         
         string IMigrationMetadata.Id
         {
-            get { return "201611221311115_ProductID"; }
+            get { return "201611281405148_NewTables"; }
         }
         
         string IMigrationMetadata.Source

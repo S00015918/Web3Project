@@ -45,7 +45,7 @@ namespace WebProject.Migrations
                 c => new
                     {
                         OrderID = c.Int(nullable: false),
-                        ProductID = c.Int(nullable: false),
+                        ProductID = c.String(nullable: false),
                         OrderDetailId = c.Int(nullable: false, identity: true),
                         Quantity = c.Int(nullable: false),
                         UnitPrice = c.Double(nullable: false),

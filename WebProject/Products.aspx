@@ -17,6 +17,11 @@
                         SelectCommand="SELECT * FROM [Product] ORDER BY [ProductName]">
                     </asp:SqlDataSource>
                 </div>
+
+                <div class="form-group" id="search">         
+                    <asp:TextBox ID="txtSearchMaster" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:Button ID="btnSearch" CssClass="btn" runat="server" Text="Search" OnClick="btnSearch_Click" />
+                </div>
             </div>   
             <div class="form-group">
                 <div class="col-sm-12"><h4><asp:Label ID="lblProductName" runat="server"></asp:Label></h4></div></div>
@@ -26,7 +31,7 @@
         </div>
         <br />
         <div class="col-sm-4">
-            <asp:Image ID="imgProduct" CssClass="posterImage" Height="300" Width="300" runat="server" />
+            <asp:Image ID="imgProduct" CssClass="posterImage" runat="server" />
         </div>
     </div>
     <div class="row">

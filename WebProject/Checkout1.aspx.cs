@@ -13,24 +13,41 @@ namespace WebProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string url = ConfigurationManager.AppSettings["SecurePath"] + "CheckOut2.aspx";
-            Response.Redirect(url);
+            bool val1 = (System.Web.HttpContext.Current.User != null) && System.Web.HttpContext.Current.User.Identity.IsAuthenticated;
         }
 
         protected void btnCheckOut_Click(object sender, EventArgs e)
         {
+            bool val1 = (System.Web.HttpContext.Current.User != null) && System.Web.HttpContext.Current.User.Identity.IsAuthenticated;
             if (IsValid)
             {
-                var customer = new Customer();
-                customer.FirstName = txtFirstName.Text;
-                customer.LastName = txtLastName.Text;
-                customer.EmailAddress = txtEmail.Text;
-                customer.Address = txtAddress.Text;
-                customer.City = txtCity.Text;
-                customer.County = txtState.Text;
-                customer.Phone = txtPhone.Text;
-                Session["Customer"] = customer;
-                Response.Redirect("~/CheckOut2.aspx");
+                if (HttpContext.Current.User.Identity.IsAuthenticated)
+                {
+                    txtFirstName.Visible = false;
+                    txtLastName.Visible = false;
+
+                    ApplicationDbContext ctx = new ApplicationDbContext();
+                    ctx.Customers.Add(new Customer
+                    {
+                        City = txtCity.Text,
+                        County = txtCounty.Text
+                        
+                    });
+                    ctx.SaveChanges();
+                }
+                else
+                {
+                    var customer = new Customer();
+                    customer.FirstName = txtFirstName.Text;
+                    customer.LastName = txtLastName.Text;
+                    customer.EmailAddress = txtEmail.Text;
+                    customer.Address = txtAddress.Text;
+                    customer.City = txtCity.Text;
+                    customer.County = txtCounty.Text;
+                    customer.Phone = txtPhone.Text;
+                    Session["Customer"] = customer;
+                    Response.Redirect("~/Checkout2.aspx");
+                }
             }
         }
 

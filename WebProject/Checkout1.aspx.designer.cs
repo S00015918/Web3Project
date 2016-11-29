@@ -103,22 +103,22 @@ namespace WebProject {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCity;
         
         /// <summary>
-        /// txtState control.
+        /// txtCounty control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtState;
+        protected global::System.Web.UI.WebControls.TextBox txtCounty;
         
         /// <summary>
-        /// rfvState control.
+        /// rfvCounty control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvState;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCounty;
         
         /// <summary>
         /// txtZip control.

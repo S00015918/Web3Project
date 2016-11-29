@@ -43,6 +43,10 @@ namespace WebProject
             }
         }
 
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+
+        }
         protected void btnCart_Click(object sender, EventArgs e)
         {
 

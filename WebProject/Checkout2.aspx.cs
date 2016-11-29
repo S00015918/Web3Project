@@ -13,8 +13,8 @@ namespace WebProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string url = ConfigurationManager.AppSettings["SecurePath"] + "Confirmation.aspx";
-            Response.Redirect(url);
+            //string url = ConfigurationManager.AppSettings["SecurePath"] + "Confirmation.aspx";
+            //Response.Redirect(url);
         }
 
         protected void btnAccept_Click(object sender, EventArgs e)

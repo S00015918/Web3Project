@@ -1,10 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Checkout1.aspx.cs" Inherits="WebProject.Checkout1" %>
-<asp:Content ContentPlaceHolderID="mainPlaceholder" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h1>Check Out Page</h1>
 
     <div class="form-group">
-        <label class="control-label col-sm-2">First Name:</label>
-        <div class="col-sm-5">
+        <label class="control-label col-md-3">First Name:</label>
+        <div class="col-md-7">
             <asp:TextBox ID="txtFirstName" runat="server" CssClass="form-control"></asp:TextBox>
         </div>
         <div class="col-sm-5">
@@ -15,8 +15,8 @@
     </div>
 
     <div class="form-group">
-        <label class="control-label col-sm-2">Last Name:</label>
-        <div class="col-sm-5">
+        <label class="control-label col-md-3">Last Name:</label>
+        <div class="col-md-7">
             <asp:TextBox ID="txtLastName" runat="server" CssClass="form-control"></asp:TextBox>
         </div>
         <div class="col-sm-5">
@@ -27,8 +27,8 @@
     </div>
 
     <div class="form-group">
-        <label class="control-label col-sm-2">Email</label>
-        <div class="col-sm-5">
+        <label class="control-label col-md-3">Email</label>
+        <div class="col-md-7">
             <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control"></asp:TextBox>
         </div>
         <div class="col-sm-5">
@@ -63,19 +63,19 @@
     </div>
 
     <div class="form-group">
-        <label class="control-label col-sm-2">State</label>
+        <label class="control-label col-sm-2">County</label>
         <div class="col-sm-5">
-            <asp:TextBox ID="txtState" runat="server" CssClass="form-control"></asp:TextBox>
+            <asp:TextBox ID="txtCounty" runat="server" CssClass="form-control"></asp:TextBox>
         </div>
         <div class="col-sm-5">
-            <asp:RequiredFieldValidator ID="rfvState" runat="server" 
+            <asp:RequiredFieldValidator ID="rfvCounty" runat="server" 
                 ErrorMessage="Required" CssClass="text-danger" 
-                Display="Dynamic" ControlToValidate="txtState"></asp:RequiredFieldValidator> 
+                Display="Dynamic" ControlToValidate="txtCounty"></asp:RequiredFieldValidator> 
         </div>
     </div>
 
     <div class="form-group">
-        <label class="control-label col-sm-2">Zip Code</label>
+        <label class="control-label col-sm-2">Post Code</label>
         <div class="col-sm-5">
             <asp:TextBox ID="txtZip" runat="server" CssClass="form-control"></asp:TextBox>
         </div>

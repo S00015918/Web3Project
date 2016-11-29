@@ -16,6 +16,7 @@ namespace WebProject.Models
         public string ProductID { get; set; }
         public string ProductName { get; set; }
         public int QuantityInStock { get; set; }
+        public string Genre { get; set; }
         public string ImageFile { get; set; }
         public decimal Price { get; set; }
     }

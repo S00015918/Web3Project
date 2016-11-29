@@ -47,8 +47,8 @@
         <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="Address" CssClass="col-md-2 control-label">Address</asp:Label>
             <div class="col-md-10">
-                <asp:TextBox runat="server" ID="Address" TextMode="Password" CssClass="form-control" />
-                <asp:RequiredFieldValidator runat="server" ControlToValidate="Password"
+                <asp:TextBox runat="server" ID="Address" CssClass="form-control" />
+                <asp:RequiredFieldValidator runat="server" ControlToValidate="Address"
                     CssClass="text-danger" ErrorMessage="The address field is required." />
             </div>
         </div>
