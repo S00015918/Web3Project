@@ -18,7 +18,7 @@ namespace WebProject
             selectedProduct = this.GetSelectedProduct();
             lblProductName.Text = selectedProduct.ProductName;
             lblUnitPrice.Text = selectedProduct.Price.ToString("c") + " each";
-            imgProduct.ImageUrl = "Images/Products/" + selectedProduct.ImageFile;
+            imgProduct.ImageUrl = selectedProduct.ImageFile;
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)

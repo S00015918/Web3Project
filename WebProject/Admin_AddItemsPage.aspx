@@ -1,7 +1,8 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Admin_AddItemsPage.aspx.cs" Inherits="WebProject_PostersWorking.Admin_AddItemsPage" Title="%Admin%_Add Items." %>
 
 <asp:Content runat="server" ID="Content1" ContentPlaceHolderID="MainContent">
-    <h2><%: Title %>.</h2>
+    <br />
+    <br />
 
     <div class="form-horizontal">
         <h4>Add a Poster</h4>
@@ -53,7 +54,7 @@
         <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="ImageUpload" CssClass="col-md-2 control-label">Upload Image</asp:Label>
             <div class="col-md-10">
-                <asp:FileUpload runat="server" ID="ImageUpload" CssClass="form-control" />
+                <asp:FileUpload runat="server" ID="ImageUpload" CssClass="form-control" Width="300" />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="ImageUpload"
                     CssClass="text-danger" ErrorMessage="An image is required." />
             </div>
@@ -62,7 +63,7 @@
         <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="ddlImages" CssClass="col-md-2 control-label">Select Image</asp:Label>
             <div class="col-md-10">
-                <asp:DropDownList ID="ddlImages" runat="server" AppendDataBoundItems="true" AutoPostBack="true" OnSelectedIndexChanged="FetchImage"></asp:DropDownList>
+                <asp:DropDownList ID="ddlImages" runat="server" AppendDataBoundItems="true" AutoPostBack="true" OnSelectedIndexChanged="FetchImage" Width="250"></asp:DropDownList>
   
             </div>
         </div>
@@ -70,7 +71,7 @@
         <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="posterImage" CssClass="col-md-2 control-label">Add Image</asp:Label>
             <div class="col-md-10">
-                <asp:Image ID="posterImage" runat="server" Visible="true" Height="130px" Width="130px" />
+                <asp:Image ID="posterImage" runat="server" Visible="true" Height="200px" Width="200px" />
 
             </div>
         </div>

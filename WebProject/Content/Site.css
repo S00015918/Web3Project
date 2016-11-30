@@ -43,7 +43,8 @@ input[type="select"] {
   max-height: 225px;
 }
 
-.posterImage {
-    width: 300px;
-    height: 300px;
-}
+/*.thumbnail .posterImage {
+    padding-top:10px;  
+    width:220px;
+    height:300px;
+}*/
