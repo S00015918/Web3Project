@@ -9,7 +9,7 @@
     <div class="form-group">
         <div class="col-xs-12">
             <asp:Button ID="btnContinue" runat="server" Text="Continue Shopping" 
-                    PostBackUrl="~/Order.aspx" CssClass="btn" />
+                    PostBackUrl="~/Default.aspx" CssClass="btn" />
         </div>
     </div>
 </asp:Content>

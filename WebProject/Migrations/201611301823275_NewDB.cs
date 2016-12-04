@@ -3,7 +3,7 @@ namespace WebProject.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Tables : DbMigration
+    public partial class NewDB : DbMigration
     {
         public override void Up()
         {
@@ -15,6 +15,7 @@ namespace WebProject.Migrations
                         FirstName = c.String(nullable: false),
                         LastName = c.String(nullable: false),
                         EmailAddress = c.String(),
+                        Password = c.String(),
                         Phone = c.String(),
                         Address = c.String(),
                         City = c.String(),
@@ -45,14 +46,14 @@ namespace WebProject.Migrations
                 c => new
                     {
                         OrderID = c.Int(nullable: false),
-                        ProductID = c.String(nullable: false),
+                        ProductID = c.String(maxLength: 128),
                         OrderDetailId = c.Int(nullable: false, identity: true),
                         Quantity = c.Int(nullable: false),
                         UnitPrice = c.Double(nullable: false),
                     })
                 .PrimaryKey(t => t.OrderDetailId)
                 .ForeignKey("dbo.Order", t => t.OrderID, cascadeDelete: true)
-                .ForeignKey("dbo.Product", t => t.ProductID, cascadeDelete: true)
+                .ForeignKey("dbo.Product", t => t.ProductID)
                 .Index(t => t.OrderID)
                 .Index(t => t.ProductID);
             
@@ -60,9 +61,11 @@ namespace WebProject.Migrations
                 "dbo.Product",
                 c => new
                     {
-                        ProductID = c.Int(nullable: false, identity: true),
+                        ProductID = c.String(nullable: false, maxLength: 128),
                         ProductName = c.String(),
                         QuantityInStock = c.Int(nullable: false),
+                        Genre = c.String(),
+                        ImageFile = c.String(),
                         Price = c.Decimal(nullable: false, precision: 18, scale: 2),
                     })
                 .PrimaryKey(t => t.ProductID);

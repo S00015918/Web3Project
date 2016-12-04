@@ -14,6 +14,13 @@ namespace WebProject
         protected void Page_Load(object sender, EventArgs e)
         {
             bool val1 = (System.Web.HttpContext.Current.User != null) && System.Web.HttpContext.Current.User.Identity.IsAuthenticated;
+            if (HttpContext.Current.User.Identity.IsAuthenticated)
+            {
+                Firstname.Visible = false;
+                Surname.Visible = false;
+                lblFirstname.Visible = false;
+                lblSurname.Visible = false;
+            }
         }
 
         protected void btnCheckOut_Click(object sender, EventArgs e)
@@ -23,14 +30,14 @@ namespace WebProject
             {
                 if (HttpContext.Current.User.Identity.IsAuthenticated)
                 {
-                    txtFirstName.Visible = false;
-                    txtLastName.Visible = false;
+                    Firstname.Visible = false;
+                    Surname.Visible = false;
 
                     ApplicationDbContext ctx = new ApplicationDbContext();
                     ctx.Customers.Add(new Customer
                     {
-                        City = txtCity.Text,
-                        County = txtCounty.Text
+                        City = City.Text,
+                        County = County.Text
                         
                     });
                     ctx.SaveChanges();
@@ -38,13 +45,13 @@ namespace WebProject
                 else
                 {
                     var customer = new Customer();
-                    customer.FirstName = txtFirstName.Text;
-                    customer.LastName = txtLastName.Text;
-                    customer.EmailAddress = txtEmail.Text;
-                    customer.Address = txtAddress.Text;
-                    customer.City = txtCity.Text;
-                    customer.County = txtCounty.Text;
-                    customer.Phone = txtPhone.Text;
+                    customer.FirstName = Firstname.Text;
+                    customer.LastName = Surname.Text;
+                    customer.EmailAddress = Email.Text;
+                    customer.Address = Address.Text;
+                    customer.City = City.Text;
+                    customer.County = County.Text;
+                    customer.Phone = Phone.Text;
                     Session["Customer"] = customer;
                     Response.Redirect("~/Checkout2.aspx");
                 }

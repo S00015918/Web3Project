@@ -13,14 +13,14 @@ namespace WebProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //string url = ConfigurationManager.AppSettings["SecurePath"] + "Confirmation.aspx";
-            //Response.Redirect(url);
+
         }
 
         protected void btnAccept_Click(object sender, EventArgs e)
         {
             if (IsValid)
             {
+
                 var customer = (Customer)Session["Customer"];
                 customer.ShippingMethod = rblShipping.SelectedValue;
                 customer.CardType = ddlCardType.SelectedValue;
@@ -29,6 +29,7 @@ namespace WebProject
 
                 Session.Remove("Cart");
                 Response.Redirect("~/Confirmation.aspx");
+
             }
         }
 
@@ -40,12 +41,11 @@ namespace WebProject
             string url = ConfigurationManager.AppSettings["UnSecurePath"] + "Order.aspx";
             Response.Redirect(url);
 
-            //Response.Redirect("~/Order.aspx");
         }
 
         protected void btnContinue_Click(object sender, EventArgs e)
         {
-            string url = ConfigurationManager.AppSettings["UnSecurePath"] + "Order.aspx";
+            string url = ConfigurationManager.AppSettings["SecurePath"] + "Confirmation.aspx";
             Response.Redirect(url);
 
         }

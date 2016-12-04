@@ -7,13 +7,13 @@ namespace WebProject.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class ProductImage : IMigrationMetadata
+    public sealed partial class NewDB : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ProductImage));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(NewDB));
         
         string IMigrationMetadata.Id
         {
-            get { return "201611221139352_ProductImage"; }
+            get { return "201611301823275_NewDB"; }
         }
         
         string IMigrationMetadata.Source

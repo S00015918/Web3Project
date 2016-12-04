@@ -430,21 +430,9 @@
     <Compile Include="Migrations\201611081139575_Initial.Designer.cs">
       <DependentUpon>201611081139575_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201611171339073_Tables.cs" />
-    <Compile Include="Migrations\201611171339073_Tables.Designer.cs">
-      <DependentUpon>201611171339073_Tables.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611171500338_Tablesv1.cs" />
-    <Compile Include="Migrations\201611171500338_Tablesv1.Designer.cs">
-      <DependentUpon>201611171500338_Tablesv1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611221139352_ProductImage.cs" />
-    <Compile Include="Migrations\201611221139352_ProductImage.Designer.cs">
-      <DependentUpon>201611221139352_ProductImage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611281405148_NewTables.cs" />
-    <Compile Include="Migrations\201611281405148_NewTables.Designer.cs">
-      <DependentUpon>201611281405148_NewTables.cs</DependentUpon>
+    <Compile Include="Migrations\201611301823275_NewDB.cs" />
+    <Compile Include="Migrations\201611301823275_NewDB.Designer.cs">
+      <DependentUpon>201611301823275_NewDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CartItem.cs" />
@@ -502,17 +490,8 @@
     <EmbeddedResource Include="Migrations\201611081139575_Initial.resx">
       <DependentUpon>201611081139575_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611171339073_Tables.resx">
-      <DependentUpon>201611171339073_Tables.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611171500338_Tablesv1.resx">
-      <DependentUpon>201611171500338_Tablesv1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611221139352_ProductImage.resx">
-      <DependentUpon>201611221139352_ProductImage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611281405148_NewTables.resx">
-      <DependentUpon>201611281405148_NewTables.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201611301823275_NewDB.resx">
+      <DependentUpon>201611301823275_NewDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

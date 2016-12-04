@@ -31,7 +31,7 @@
         </div>
         <br />
         <div class="col-sm-4">
-            <asp:Image ID="imgProduct" CssClass="posterImage" runat="server" />
+            <asp:Image ID="imgProduct" CssClass="posterImage" runat="server" Width="300px" Height="400px" />
         </div>
     </div>
     <div class="row">

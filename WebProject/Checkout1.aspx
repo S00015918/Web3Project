@@ -1,103 +1,84 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Checkout1.aspx.cs" Inherits="WebProject.Checkout1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <h1>Check Out Page</h1>
+    
+    <br />
+    <br />
+     <div class="form-horizontal">
+        <h4>Shipping Details</h4>
+        <hr />
+        <asp:ValidationSummary runat="server" CssClass="text-danger" />
+        <div class="form-group">
+            <asp:Label runat="server" ID="lblFirstname" AssociatedControlID="Firstname" CssClass="col-md-2 control-label">Firstname</asp:Label>
+            <div class="col-md-10">
+                <asp:TextBox runat="server" ID="Firstname" CssClass="form-control" />
+                <asp:RequiredFieldValidator runat="server" ControlToValidate="Firstname"
+                    CssClass="text-danger" ErrorMessage="The firstname field is required." />
+            </div>
+        </div>
+        <div class="form-group">
+            <asp:Label runat="server" AssociatedControlID="Surname" ID="lblSurname" CssClass="col-md-2 control-label">Surname</asp:Label>
+            <div class="col-md-10">
+                <asp:TextBox runat="server" ID="Surname" CssClass="form-control" />
+                <asp:RequiredFieldValidator runat="server" ControlToValidate="Surname"
+                    CssClass="text-danger" ErrorMessage="The surname field is required." />
+            </div>
+        </div>
 
-    <div class="form-group">
-        <label class="control-label col-md-3">First Name:</label>
-        <div class="col-md-7">
-            <asp:TextBox ID="txtFirstName" runat="server" CssClass="form-control"></asp:TextBox>
+        <div class="form-group">
+            <asp:Label runat="server" AssociatedControlID="Email" CssClass="col-md-2 control-label">Email</asp:Label>
+            <div class="col-md-10">
+                <asp:TextBox runat="server" ID="Email" CssClass="form-control" TextMode="Email" />
+                <asp:RequiredFieldValidator runat="server" ControlToValidate="Email"
+                    CssClass="text-danger" ErrorMessage="The email field is required." />
+            </div>
         </div>
-        <div class="col-sm-5">
-            <asp:RequiredFieldValidator ID="rfvFirstName" runat="server" 
-                ErrorMessage="Required" CssClass="text-danger" 
-                Display="Dynamic" ControlToValidate="txtFirstName"></asp:RequiredFieldValidator>
+
+        <div class="form-group">
+            <asp:Label runat="server" AssociatedControlID="Phone" CssClass="col-md-2 control-label">Phone Number</asp:Label>
+            <div class="col-md-10">
+                <asp:TextBox runat="server" ID="Phone" CssClass="form-control" TextMode="Phone" />
+                <asp:RequiredFieldValidator runat="server" ControlToValidate="Email"
+                    CssClass="text-danger" ErrorMessage="The Phone number field is required." />
+            </div>
         </div>
+        <div class="form-group">
+            <asp:Label runat="server" AssociatedControlID="Address" CssClass="col-md-2 control-label">Address</asp:Label>
+            <div class="col-md-10">
+                <asp:TextBox runat="server" ID="Address" CssClass="form-control" />
+                <asp:RequiredFieldValidator runat="server" ControlToValidate="Address"
+                    CssClass="text-danger" ErrorMessage="The address field is required." />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <asp:Label runat="server" AssociatedControlID="City" CssClass="col-md-2 control-label">City</asp:Label>
+            <div class="col-md-10">
+                <asp:TextBox runat="server" ID="City" CssClass="form-control" />
+                <asp:RequiredFieldValidator runat="server" ControlToValidate="City"
+                    CssClass="text-danger" Display="Dynamic" ErrorMessage="The city field is required." />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <asp:Label runat="server" AssociatedControlID="County" CssClass="col-md-2 control-label">County</asp:Label>
+            <div class="col-md-10">
+                <asp:TextBox runat="server" ID="County" CssClass="form-control" />
+                <asp:RequiredFieldValidator runat="server" ControlToValidate="County"
+                    CssClass="text-danger" ErrorMessage="The county field is required." />
+            </div>
+        </div>
+
+         <div class="form-group">
+            <asp:Label runat="server" AssociatedControlID="Postcode" CssClass="col-md-2 control-label">Post Code</asp:Label>
+            <div class="col-md-10">
+                <asp:TextBox runat="server" ID="Postcode" CssClass="form-control" />
+                <asp:RequiredFieldValidator runat="server" ControlToValidate="Postcode"
+                    CssClass="text-danger" ErrorMessage="Your postcode is required." />
+            </div>
+        </div>
+
     </div>
-
-    <div class="form-group">
-        <label class="control-label col-md-3">Last Name:</label>
-        <div class="col-md-7">
-            <asp:TextBox ID="txtLastName" runat="server" CssClass="form-control"></asp:TextBox>
-        </div>
-        <div class="col-sm-5">
-            <asp:RequiredFieldValidator ID="rfvLastName" runat="server" 
-                ErrorMessage="Required" CssClass="text-danger" 
-                Display="Dynamic" ControlToValidate="txtLastName"></asp:RequiredFieldValidator> 
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label class="control-label col-md-3">Email</label>
-        <div class="col-md-7">
-            <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control"></asp:TextBox>
-        </div>
-        <div class="col-sm-5">
-            <asp:RequiredFieldValidator ID="rfvEmail" runat="server" 
-                ErrorMessage="Required" CssClass="text-danger" 
-                Display="Dynamic" ControlToValidate="txtEmail"></asp:RequiredFieldValidator> 
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label class="control-label col-sm-2">Address</label>
-        <div class="col-sm-5">
-            <asp:TextBox ID="txtAddress" runat="server" CssClass="form-control"></asp:TextBox>
-        </div>
-        <div class="col-sm-5">
-            <asp:RequiredFieldValidator ID="rfvAddress" runat="server" 
-                ErrorMessage="Required" CssClass="text-danger" 
-                Display="Dynamic" ControlToValidate="txtAddress"></asp:RequiredFieldValidator> 
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label class="control-label col-sm-2">City</label>
-        <div class="col-sm-5">
-            <asp:TextBox ID="txtCity" runat="server" CssClass="form-control"></asp:TextBox>
-        </div>
-        <div class="col-sm-5">
-            <asp:RequiredFieldValidator ID="rfvCity" runat="server" 
-                ErrorMessage="Required" CssClass="text-danger" 
-                Display="Dynamic" ControlToValidate="txtCity"></asp:RequiredFieldValidator> 
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label class="control-label col-sm-2">County</label>
-        <div class="col-sm-5">
-            <asp:TextBox ID="txtCounty" runat="server" CssClass="form-control"></asp:TextBox>
-        </div>
-        <div class="col-sm-5">
-            <asp:RequiredFieldValidator ID="rfvCounty" runat="server" 
-                ErrorMessage="Required" CssClass="text-danger" 
-                Display="Dynamic" ControlToValidate="txtCounty"></asp:RequiredFieldValidator> 
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label class="control-label col-sm-2">Post Code</label>
-        <div class="col-sm-5">
-            <asp:TextBox ID="txtZip" runat="server" CssClass="form-control"></asp:TextBox>
-        </div>
-        <div class="col-sm-5">
-            <asp:RequiredFieldValidator ID="rfvZip" runat="server" 
-                ErrorMessage="Required" CssClass="text-danger" 
-                Display="Dynamic" ControlToValidate="txtZip"></asp:RequiredFieldValidator> 
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label class="control-label col-sm-2">Phone</label>
-        <div class="col-sm-5">
-            <asp:TextBox ID="txtPhone" runat="server" CssClass="form-control"></asp:TextBox>
-        </div>
-        <div class="col-sm-5">
-            <asp:RequiredFieldValidator ID="rfvPhone" runat="server" 
-                ErrorMessage="Required" CssClass="text-danger" 
-                Display="Dynamic" ControlToValidate="txtPhone"></asp:RequiredFieldValidator> 
-        </div>
-    </div>
-
+    
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
             <asp:Button ID="btnCheckOut" runat="server" Text="Continue Checkout" 
@@ -108,4 +89,5 @@
                 CausesValidation="False" CssClass="btn" PostBackUrl="~/Order.aspx" />
         </div>
     </div>
+    
 </asp:Content>
