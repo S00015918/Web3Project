@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Products.aspx.cs" Inherits="WebProject.Products" %>
-<asp:Content ID="MainContent" ContentPlaceHolderID="mainPlaceholder" runat="server">
+<%@ MasterType VirtualPath="~/Site.Master" %>
+
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="row">
         <div class="col-sm-8">
             <div class="form-group">
@@ -14,7 +16,7 @@
                     </asp:DropDownList>
                     <asp:SqlDataSource ID="dsProducts" runat="server" 
                         ConnectionString='<%$ ConnectionStrings:DefaultConnection %>' 
-                        SelectCommand="SELECT * FROM [Product] ORDER BY [ProductName]">
+                        SelectCommand="SELECT * FROM [Product]">
                     </asp:SqlDataSource>
                 </div>
 
@@ -50,9 +52,10 @@
                         ErrorMessage="Quantity must range from 1 to 500."
                         MaximumValue="500" MinimumValue="1" Type="Integer"></asp:RangeValidator></div>
             </div>
-
+            <br />
             <div class="form-group">
                 <div class="col-sm-12">
+                    <br />
                     <asp:Button ID="btnAdd" runat="server" Text="Add to Cart" 
                         onclick="btnAdd_Click" CssClass="btn" />
                     <asp:Button ID="btnCart" runat="server" Text="Go to Cart" 

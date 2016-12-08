@@ -11,7 +11,10 @@ namespace WebProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Master.HeaderText = "About Us";
 
+            Master.AddBreadcrumbLink("/Default.aspx", "Home");
+            Master.AddCurrentPage("About Us");
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="WebProject._Default" %>
+<%@ MasterType VirtualPath="~/Site.Master" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -73,7 +74,7 @@
                                 <h3>
                                     <asp:Label ID="lblPosterName" runat="server" Text='<%# Eval("ProductName")%>'></asp:Label></h3>
                                 <p>
-                                    <asp:Label ID="lblPosterPrice" runat="server" Text='<%# Eval("Price")%>'></asp:Label>
+                                    <asp:Label ID="lblPosterPrice" runat="server" Text='<%# Eval("Price", "{0:c}")%>'></asp:Label>
                                 </p>
                                 <p><a href="#" class="btn btn-primary" id="addtoCart" onclick="AddToCart()" role="button">Add to cart</a> <a href="#" class="btn btn-default" role="button">Buy Now!</a></p>
                             </div>

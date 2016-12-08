@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -19,6 +20,11 @@ namespace WebProject
             lblProductName.Text = selectedProduct.ProductName;
             lblUnitPrice.Text = selectedProduct.Price.ToString("c") + " each";
             imgProduct.ImageUrl = selectedProduct.ImageFile;
+
+            Master.HeaderText = "Posters";
+
+            Master.AddBreadcrumbLink("/Default.aspx", "Home");
+            Master.AddCurrentPage("Products");
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)
@@ -45,7 +51,34 @@ namespace WebProject
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
+            SqlConnection con = new SqlConnection();
+            string query = "Select ProductName from Product ProductName like'" + txtSearchMaster.Text + "%";
 
+            //SqlDataAdapter da = new SqlDataAdapter(query, con);
+            //DataSet ds = new DataSet();
+            //da.Fill(ds);
+
+            imgProduct.DataBind();
+
+            string str = "Select ProductName from Product ProductName like'" + txtSearchMaster.Text + "%";
+
+            SqlCommand xp = new SqlCommand(str, con);
+
+            //con.Open();
+
+            SqlDataAdapter da = new SqlDataAdapter();
+
+            da.SelectCommand = xp;
+
+            DataSet ds = new DataSet();
+
+            da.Fill(ds,"ImageFile");
+
+            //imgProduct.DataSource = ds;
+
+            imgProduct.DataBind();
+
+            con.Close();
         }
         protected void btnCart_Click(object sender, EventArgs e)
         {

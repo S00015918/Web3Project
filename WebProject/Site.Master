@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebProject.SiteMaster" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebProject.SiteMaster" ClientIDMode="Static" %>
 
 <!DOCTYPE html>
 
@@ -56,12 +56,13 @@
                     <a class="navbar-brand" runat="server" href="~/">MonsterPosters</a>
                 </div>
                 <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/Products">Browse Posters <span class="glyphicon glyphicon-picture"></span></a></li>
+                    <ul id="navList" runat="server" class="nav navbar-nav">
+                        <li><asp:HyperLink runat="server" NavigateUrl="~/Products">Browse Posters <span class="glyphicon glyphicon-picture"></span></asp:HyperLink></li>
                         <li><a runat="server" href="~/About">About <span class="glyphicon glyphicon-info-sign"></span></a></li>
                         <li><a runat="server" href="~/Contact">Contact <span class="glyphicon glyphicon-phone"></span></a></li>
-                        <li><a runat="server" href="~/Cart">Shopping Cart <span class="glyphicon glyphicon-shopping-cart"></span></a></li>
-                        <li><a runat="server" href="~/EditPoster">Poster Design <span class="glyphicon glyphicon-save"></span></a></li>
+                        <li><a runat="server" href="~/Cart">Cart <span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+                        <li><a runat="server" href="~/UploadPoster">Poster Upload <span class="glyphicon glyphicon-open"></span></a></li>
+                        <li><a runat="server" href="~/EditPoster">Customise <span class="glyphicon glyphicon-save"></span></a></li>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
@@ -83,12 +84,20 @@
             </div>
         </div>
         <div class="container body-content">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
-                
-            </asp:ContentPlaceHolder>
-            <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - Monster Posters</p>
+            <br />
+            <br />
+            <main class="row">
+                <div class="col-sm-12">
+                    <ol class="breadcrumb">
+                        <asp:Literal ID="litBreadcrumb" runat="server"></asp:Literal>
+                    </ol>
+                    <h1><asp:Label ID="lblPageHeader" runat="server"></asp:Label></h1>
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </main>
+            <footer class="text-capitalize text-center">
+                <p>copyright &copy; Monster Posters</p>
             </footer>
         </div>
     </form>

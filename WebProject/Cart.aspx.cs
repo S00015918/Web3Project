@@ -13,8 +13,14 @@ namespace WebProject
         protected void Page_Load(object sender, EventArgs e)
         {
             cart = CartItemList.GetCart();
-            if (!IsPostBack)
-                this.DisplayCart();
+            if (!IsPostBack) { 
+
+            Master.HeaderText = "Your Shopping Cart";
+            Master.AddBreadcrumbLink("/Default.aspx", "Home");
+            Master.AddCurrentPage("Cart");
+
+            this.DisplayCart();
+            }
         }
 
         protected void btnRemove_Click(object sender, EventArgs e)
