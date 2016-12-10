@@ -13,7 +13,13 @@ namespace WebProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                Master.HeaderText = "Customer Bank Details";
 
+                Master.AddBreadcrumbLink("/Default.aspx", "Home");
+                Master.AddCurrentPage("Credit Card Details");
+            }
         }
 
         protected void btnAccept_Click(object sender, EventArgs e)

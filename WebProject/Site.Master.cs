@@ -116,6 +116,12 @@ namespace WebProject
         {
             Context.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
         }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            var searchText = Server.UrlEncode(txtSearchMaster.Text); // URL encode in case of special characters
+            Response.Redirect("~/Products.aspx?srch=" + searchText);
+        }
     }
 
 }

@@ -12,7 +12,7 @@
                 <div class="col-sm-6">
                     <asp:DropDownList ID="ddlProducts" runat="server" AutoPostBack="True" 
                         DataSourceID="dsProducts" DataTextField="ProductName" 
-                        DataValueField="ProductID" CssClass="form-control">
+                        DataValueField="ProductID" CssClass="form-control" OnSelectedIndexChanged="ddlProducts_SelectedIndexChanged">
                     </asp:DropDownList>
                     <asp:SqlDataSource ID="dsProducts" runat="server" 
                         ConnectionString='<%$ ConnectionStrings:DefaultConnection %>' 
@@ -20,10 +20,6 @@
                     </asp:SqlDataSource>
                 </div>
 
-                <div class="form-group" id="search">         
-                    <asp:TextBox ID="txtSearchMaster" runat="server" CssClass="form-control"></asp:TextBox>
-                    <asp:Button ID="btnSearch" CssClass="btn" runat="server" Text="Search" OnClick="btnSearch_Click" />
-                </div>
             </div>   
             <div class="form-group">
                 <div class="col-sm-12"><h4><asp:Label ID="lblProductName" runat="server"></asp:Label></h4></div></div>
@@ -33,7 +29,23 @@
         </div>
         <br />
         <div class="col-sm-4">
-            <asp:Image ID="imgProduct" CssClass="posterImage" runat="server" Width="300px" Height="400px" />
+            <%--<asp:Image ID="imgProduct" CssClass="posterImage" runat="server" Width="300px" Height="400px" />--%>
+
+            <asp:datagrid id="dgPoster" runat="server" AutoGenerateColumns="False">
+                <Columns>
+                <asp:TemplateColumn HeaderText="Image">
+                <ItemTemplate>
+
+                <asp:Image Width="300px" Height="400px" ImageUrl='<%# Eval("ImageFile")%>' Runat="server" ID="imgPoster" />
+
+                </ItemTemplate>
+
+                </asp:TemplateColumn>
+                </Columns>
+
+                </asp:datagrid>
+
+
         </div>
     </div>
     <div class="row">

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -15,16 +16,41 @@ namespace WebProject
         private Product selectedProduct;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack) ddlProducts.DataBind();
-            selectedProduct = this.GetSelectedProduct();
-            lblProductName.Text = selectedProduct.ProductName;
-            lblUnitPrice.Text = selectedProduct.Price.ToString("c") + " each";
-            imgProduct.ImageUrl = selectedProduct.ImageFile;
 
-            Master.HeaderText = "Posters";
+            if (!IsPostBack)
+            {
+                Master.HeaderText = "Posters";
 
-            Master.AddBreadcrumbLink("/Default.aspx", "Home");
-            Master.AddCurrentPage("Products");
+                Master.AddBreadcrumbLink("/Default.aspx", "Home");
+                Master.AddCurrentPage("Products");
+
+                if (!String.IsNullOrEmpty(Request.QueryString["srch"]))
+                {
+                    //perform search and display results
+                    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
+                    string query = "Select * from Product where (ProductName like '%' + @name + '%')";
+
+                    SqlCommand comm = new SqlCommand(query, con);
+                    comm.Parameters.AddWithValue("@name", query).Value = (Request.QueryString["srch"]);
+
+                    //con.Open();
+
+                    SqlDataAdapter da = new SqlDataAdapter();
+
+                    da.SelectCommand = comm;
+
+                    DataSet ds = new DataSet();
+
+                    da.Fill(ds, "ImageFile");
+                    dgPoster.DataSource = ds;
+                    //imgProduct.DataSource = ds;
+
+                    dgPoster.DataBind();
+
+                    con.Close();
+
+                }
+            }
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)
@@ -51,34 +77,7 @@ namespace WebProject
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection();
-            string query = "Select ProductName from Product ProductName like'" + txtSearchMaster.Text + "%";
 
-            //SqlDataAdapter da = new SqlDataAdapter(query, con);
-            //DataSet ds = new DataSet();
-            //da.Fill(ds);
-
-            imgProduct.DataBind();
-
-            string str = "Select ProductName from Product ProductName like'" + txtSearchMaster.Text + "%";
-
-            SqlCommand xp = new SqlCommand(str, con);
-
-            //con.Open();
-
-            SqlDataAdapter da = new SqlDataAdapter();
-
-            da.SelectCommand = xp;
-
-            DataSet ds = new DataSet();
-
-            da.Fill(ds,"ImageFile");
-
-            //imgProduct.DataSource = ds;
-
-            imgProduct.DataBind();
-
-            con.Close();
         }
         protected void btnCart_Click(object sender, EventArgs e)
         {
@@ -102,6 +101,19 @@ namespace WebProject
             p.QuantityInStock = (int)row["QuantityInStock"];
             p.ImageFile = row["ImageFile"].ToString();
             return p;
+        }
+
+        protected void ddlProducts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ddlProducts.DataBind();
+            selectedProduct = this.GetSelectedProduct();
+            lblProductName.Text = selectedProduct.ProductName;
+            lblUnitPrice.Text = selectedProduct.Price.ToString("c") + " each";
+            //imgProduct.ImageUrl = selectedProduct.ImageFile;
+            dgPoster.BackImageUrl = selectedProduct.ImageFile;
+
+
+            dgPoster.DataBind();
         }
     }
 }

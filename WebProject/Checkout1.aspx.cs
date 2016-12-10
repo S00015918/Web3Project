@@ -13,13 +13,21 @@ namespace WebProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            bool val1 = (System.Web.HttpContext.Current.User != null) && System.Web.HttpContext.Current.User.Identity.IsAuthenticated;
-            if (HttpContext.Current.User.Identity.IsAuthenticated)
+            if (!IsPostBack)
             {
-                Firstname.Visible = false;
-                Surname.Visible = false;
-                lblFirstname.Visible = false;
-                lblSurname.Visible = false;
+                Master.HeaderText = "Customer Personal Details";
+
+                Master.AddBreadcrumbLink("/Default.aspx", "Home");
+                Master.AddCurrentPage("Customer Details");
+
+                bool val1 = (System.Web.HttpContext.Current.User != null) && System.Web.HttpContext.Current.User.Identity.IsAuthenticated;
+                if (HttpContext.Current.User.Identity.IsAuthenticated)
+                {
+                    Firstname.Visible = false;
+                    Surname.Visible = false;
+                    lblFirstname.Visible = false;
+                    lblSurname.Visible = false;
+                }
             }
         }
 
