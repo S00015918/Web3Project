@@ -31,12 +31,14 @@
         <div class="col-sm-4">
             <%--<asp:Image ID="imgProduct" CssClass="posterImage" runat="server" Width="300px" Height="400px" />--%>
 
-            <asp:datagrid id="dgPoster" runat="server" AutoGenerateColumns="False">
+            <asp:datagrid id="dgPoster" runat="server" AutoGenerateColumns="False" Width="300px" Height="400px">
                 <Columns>
-                <asp:TemplateColumn HeaderText="Image">
+                <asp:TemplateColumn>
                 <ItemTemplate>
 
                 <asp:Image Width="300px" Height="400px" ImageUrl='<%# Eval("ImageFile")%>' Runat="server" ID="imgPoster" />
+                <p>
+                <asp:Label ID="lblPosterPrice" runat="server" Text='<%# Eval("Price", "{0:c}")%>'></asp:Label>
 
                 </ItemTemplate>
 
@@ -56,13 +58,13 @@
                     <asp:TextBox ID="txtQuantity" runat="server" 
                         CssClass="form-control"></asp:TextBox></div>
                 <div class="col-sm-7">
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" CssClass="text-danger"
+                    <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator1" CssClass="text-danger"
                         runat="server" ControlToValidate="txtQuantity" Display="Dynamic" 
-                        ErrorMessage="Quantity is a required field."></asp:RequiredFieldValidator>
-                    <asp:RangeValidator ID="RangeValidator1" runat="server" CssClass="text-danger" 
+                        ErrorMessage="Quantity is a required field."></asp:RequiredFieldValidator>--%>
+                    <%--<asp:RangeValidator ID="RangeValidator1" runat="server" CssClass="text-danger" 
                         ControlToValidate="txtQuantity" Display="Dynamic" 
                         ErrorMessage="Quantity must range from 1 to 500."
-                        MaximumValue="500" MinimumValue="1" Type="Integer"></asp:RangeValidator></div>
+                        MaximumValue="500" MinimumValue="1" Type="Integer"></asp:RangeValidator></div>--%>
             </div>
             <br />
             <div class="form-group">
@@ -77,6 +79,7 @@
             </div>
         </div>
     </div>
+</div>
 
 
 </asp:Content>

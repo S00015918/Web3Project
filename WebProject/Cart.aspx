@@ -2,7 +2,6 @@
 <%@ MasterType VirtualPath="~/Site.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <h1>Your Shopping Cart</h1>
     <div class="row"><%-- row 1 --%>
         <div class="col-sm-6"><%-- cart display column --%>
             <div class="form-group">

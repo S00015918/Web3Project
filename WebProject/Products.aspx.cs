@@ -16,72 +16,38 @@ namespace WebProject
         private Product selectedProduct;
         protected void Page_Load(object sender, EventArgs e)
         {
+            //bind dropdown on first load; get and show product data on every load   
+            if (!IsPostBack) ddlProducts.DataBind();
+            selectedProduct = this.GetSelectedProduct();
+            lblProductName.Text = selectedProduct.ProductName;
+            lblUnitPrice.Text = selectedProduct.Price.ToString("c") + " each";
+            //imgProduct.ImageUrl = "Images/Products/" + selectedProduct.ImageFile;
+            dgPoster.BackImageUrl = "Images/Products/" + selectedProduct.ImageFile;
 
-            if (!IsPostBack)
+            Master.HeaderText = "Posters";
+            Master.AddBreadcrumbLink("/Default.aspx", "Home");
+            Master.AddCurrentPage("Products");
+
+            if (!String.IsNullOrEmpty(Request.QueryString["srch"]))
             {
-                Master.HeaderText = "Posters";
+                //perform search and display results
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
+                string query = "Select * from Product where (ProductName like '%' + @name + '%')";
 
-                Master.AddBreadcrumbLink("/Default.aspx", "Home");
-                Master.AddCurrentPage("Products");
+                SqlCommand comm = new SqlCommand(query, con);
+                comm.Parameters.AddWithValue("@name", query).Value = (Request.QueryString["srch"]);
 
-                if (!String.IsNullOrEmpty(Request.QueryString["srch"]))
-                {
-                    //perform search and display results
-                    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
-                    string query = "Select * from Product where (ProductName like '%' + @name + '%')";
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = comm;
+                DataSet ds = new DataSet();
 
-                    SqlCommand comm = new SqlCommand(query, con);
-                    comm.Parameters.AddWithValue("@name", query).Value = (Request.QueryString["srch"]);
+                da.Fill(ds, "ImageFile");
+                dgPoster.DataSource = ds;
 
-                    //con.Open();
+                dgPoster.DataBind();
 
-                    SqlDataAdapter da = new SqlDataAdapter();
-
-                    da.SelectCommand = comm;
-
-                    DataSet ds = new DataSet();
-
-                    da.Fill(ds, "ImageFile");
-                    dgPoster.DataSource = ds;
-                    //imgProduct.DataSource = ds;
-
-                    dgPoster.DataBind();
-
-                    con.Close();
-
-                }
+                con.Close();
             }
-        }
-
-        protected void btnAdd_Click(object sender, EventArgs e)
-        {
-            if (Page.IsValid)
-            {
-                //get cart from session and selected item from cart
-                CartItemList cart = CartItemList.GetCart();
-                CartItem cartItem = cart[selectedProduct.ProductID];
-
-                //if item isn’t in cart, add it; otherwise, increase its quantity
-                if (cartItem == null)
-                {
-                    cart.AddItem(selectedProduct,
-                                 Convert.ToInt32(txtQuantity.Text), selectedProduct.Price);
-                }
-                else
-                {
-                    cartItem.AddQuantity(Convert.ToInt32(txtQuantity.Text));
-                }
-                Response.Redirect("Cart.aspx");
-            }
-        }
-
-        protected void btnSearch_Click(object sender, EventArgs e)
-        {
-
-        }
-        protected void btnCart_Click(object sender, EventArgs e)
-        {
-
         }
 
         private Product GetSelectedProduct()
@@ -103,17 +69,53 @@ namespace WebProject
             return p;
         }
 
+        protected void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (Page.IsValid)
+            {
+                //get cart from session and selected item from cart
+                CartItemList cart = CartItemList.GetCart();
+                CartItem cartItem = cart[selectedProduct.ProductID];
+
+                //if item isn’t in cart, add it; otherwise, increase its quantity
+                if (txtQuantity.Text == null)
+                {
+                    if (cartItem == null)
+                    {
+                        cart.AddItem(selectedProduct,
+                                 Convert.ToInt32(txtQuantity.Text), selectedProduct.Price);
+                    }
+                    else
+                    {
+                        cartItem.AddQuantity(Convert.ToInt32(txtQuantity.Text));
+                    } 
+                }
+                else
+                {
+                    if (cartItem == null)
+                    {
+                        int quantity = 1;
+                        cart.AddItem(selectedProduct,
+                        quantity, selectedProduct.Price);
+                    }
+                    else
+                    {
+                        cartItem.AddQuantity(Convert.ToInt32(txtQuantity.Text));
+                    }
+                }
+                
+                Response.Redirect("Cart.aspx");
+            }
+        }
+
+        protected void btnCart_Click(object sender, EventArgs e)
+        {
+
+        }
+
         protected void ddlProducts_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ddlProducts.DataBind();
-            selectedProduct = this.GetSelectedProduct();
-            lblProductName.Text = selectedProduct.ProductName;
-            lblUnitPrice.Text = selectedProduct.Price.ToString("c") + " each";
-            //imgProduct.ImageUrl = selectedProduct.ImageFile;
-            dgPoster.BackImageUrl = selectedProduct.ImageFile;
 
-
-            dgPoster.DataBind();
         }
     }
 }

@@ -87,8 +87,8 @@
             <br />
             <br />
             <div id="search">         
-                <asp:TextBox ID="txtSearchMaster" runat="server" CssClass="form-control"></asp:TextBox>
-                <asp:Button ID="btnSearch" runat="server" CssClass="btn" Text="Search" OnClick="btnSearch_Click" />
+                <asp:TextBox ID="txtSearchMaster" runat="server" CssClass="form-control">
+                </asp:TextBox><asp:Button ID="btnSearch" runat="server" CssClass="btn" Text="Search" OnClick="btnSearch_Click" />
             </div>
             <br />
             <br />
