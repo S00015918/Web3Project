@@ -16,17 +16,23 @@ namespace WebProject
         private Product selectedProduct;
         protected void Page_Load(object sender, EventArgs e)
         {
-            //bind dropdown on first load; get and show product data on every load   
-            if (!IsPostBack) ddlProducts.DataBind();
+            // bind dropdown and set breadcrumb on first load;    
+            if (!IsPostBack)
+            {
+                ddlProducts.DataBind();
+                Master.HeaderText = "Posters";
+                Master.AddBreadcrumbLink("/Default.aspx", "Home");
+                Master.AddCurrentPage("Products");
+            }
+
+            // get and show product data on every load   
+
             selectedProduct = this.GetSelectedProduct();
             lblProductName.Text = selectedProduct.ProductName;
             lblUnitPrice.Text = selectedProduct.Price.ToString("c") + " each";
-            //imgProduct.ImageUrl = "Images/Products/" + selectedProduct.ImageFile;
+            imgProduct.ImageUrl = selectedProduct.ImageFile;
             dgPoster.BackImageUrl = "Images/Products/" + selectedProduct.ImageFile;
 
-            Master.HeaderText = "Posters";
-            Master.AddBreadcrumbLink("/Default.aspx", "Home");
-            Master.AddCurrentPage("Products");
 
             if (!String.IsNullOrEmpty(Request.QueryString["srch"]))
             {
@@ -115,7 +121,7 @@ namespace WebProject
 
         protected void ddlProducts_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            dgPoster.Visible = false;
         }
     }
 }

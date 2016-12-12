@@ -50,18 +50,17 @@ namespace WebProject
                 //Take the image part from the json
                 string image = (string)jProduct["Poster"];
 
-                SqlCommand cmd = new SqlCommand("Update Product set ImageFile = @ImageFile where @id =" + poster.ProductID);
+                SqlCommand cmd = new SqlCommand("Update Product set ImageFile = @IFile where ProductID =" + poster.ProductID);
+                cmd.Connection = myConnection;
 
-                cmd.Parameters.AddWithValue("@ImageFile", poster.ImageFile);
+                cmd.Parameters.AddWithValue("@IFile", image);
 
+                myConnection.Open();
 
-                if (myConnection.State == ConnectionState.Closed)
-                {
-                    myConnection.Open();
-                }
-                //cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
 
                 myConnection.Close();
+                poster = null;
 
             }
 

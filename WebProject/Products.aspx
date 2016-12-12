@@ -29,7 +29,6 @@
         </div>
         <br />
         <div class="col-sm-4">
-            <%--<asp:Image ID="imgProduct" CssClass="posterImage" runat="server" Width="300px" Height="400px" />--%>
 
             <asp:datagrid id="dgPoster" runat="server" AutoGenerateColumns="False" Width="300px" Height="400px">
                 <Columns>
@@ -46,6 +45,7 @@
                 </Columns>
 
                 </asp:datagrid>
+             <asp:Image ID="imgProduct" runat="server" Width="300px" Height="400px" />
 
 
         </div>
