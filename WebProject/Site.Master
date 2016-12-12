@@ -67,8 +67,8 @@
                                 <li><asp:HyperLink runat="server" NavigateUrl="~/About">About <span class="glyphicon glyphicon-info-sign text-right"></span></asp:HyperLink></li>
                                 <li><asp:HyperLink runat="server" NavigateUrl="~/Contact">Contact <span class="glyphicon glyphicon-phone text-right"></span></asp:HyperLink></li>
                                 <li><asp:HyperLink runat="server" NavigateUrl="~/Cart">Cart <span class="glyphicon glyphicon-shopping-cart text-right"></span><span id="spanCount" runat="server" class="badge"></span></asp:HyperLink></li>
-                                <li><asp:HyperLink runat="server" NavigateUrl="~/UploadPoster">Poster Upload <span class="glyphicon glyphicon-open text-right"></span></asp:HyperLink></li>
-                                <li><asp:HyperLink runat="server" NavigateUrl="~/EditPoster">Customise <span class="glyphicon glyphicon-save text-right"></span></asp:HyperLink></li>
+                                <%--<li><asp:HyperLink runat="server" NavigateUrl="~/UploadPoster">Poster Upload <span class="glyphicon glyphicon-open text-right"></span></asp:HyperLink></li>--%>
+                                <li><asp:HyperLink runat="server" NavigateUrl="~/EditPoster">Customise Poster <span class="glyphicon glyphicon-save text-right"></span></asp:HyperLink></li>
                                 </ul>
                             </asp:HyperLink>
                         </li>
