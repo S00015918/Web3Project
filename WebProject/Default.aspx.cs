@@ -50,10 +50,11 @@ namespace WebProject
                 //Take the image part from the json
                 string image = (string)jProduct["Poster"];
 
+                // Update the Image Column in the product table unique to each Product ID
                 SqlCommand cmd = new SqlCommand("Update Product set ImageFile = @IFile where ProductID =" + poster.ProductID);
                 cmd.Connection = myConnection;
 
-                cmd.Parameters.AddWithValue("@IFile", image);
+                cmd.Parameters.AddWithValue("@IFile", image); // Add the updated image to the ImageFile row in product table
 
                 myConnection.Open();
 

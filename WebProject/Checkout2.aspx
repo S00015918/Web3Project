@@ -12,9 +12,9 @@
             <label class="control-label col-sm-2">Choose one:</label>
             <div class="col-sm-10">
                 <asp:RadioButtonList ID="rblShipping" runat="server">
-                    <asp:ListItem Selected="True">Courier Post</asp:ListItem>
-                    <asp:ListItem>Express Post</asp:ListItem>
-                    <asp:ListItem>International Service</asp:ListItem>
+                    <asp:ListItem Value="1" Selected="True">Courier Post</asp:ListItem>
+                    <asp:ListItem Value="2">Express Post</asp:ListItem>
+                    <asp:ListItem Value="3">International Service</asp:ListItem>
                 </asp:RadioButtonList>
             </div>
         </div>

@@ -26,12 +26,32 @@ namespace WebProject
         {
             if (IsValid)
             {
+                if (rblShipping.SelectedValue == "1")
+                {
+                    var customer = (Customer)Session["Customer"];
+                    customer.ShippingMethod = "3";
+                    customer.CardType = ddlCardType.SelectedValue;
+                    customer.CardNumber = txtCardNumber.Text;
+                    customer.ExpirationDate = txtExpiration.Text;
+                }
 
-                var customer = (Customer)Session["Customer"];
-                customer.ShippingMethod = rblShipping.SelectedValue;
-                customer.CardType = ddlCardType.SelectedValue;
-                customer.CardNumber = txtCardNumber.Text;
-                customer.ExpirationDate = txtExpiration.Text;
+                if (rblShipping.SelectedValue == "2")
+                {
+                    var customer = (Customer)Session["Customer"];
+                    customer.ShippingMethod = "2";
+                    customer.CardType = ddlCardType.SelectedValue;
+                    customer.CardNumber = txtCardNumber.Text;
+                    customer.ExpirationDate = txtExpiration.Text;
+                }
+
+                if (rblShipping.SelectedValue == "3")
+                {
+                    var customer = (Customer)Session["Customer"];
+                    customer.ShippingMethod = "5";
+                    customer.CardType = ddlCardType.SelectedValue;
+                    customer.CardNumber = txtCardNumber.Text;
+                    customer.ExpirationDate = txtExpiration.Text;
+                }
 
                 Session.Remove("Cart");
                 Response.Redirect("~/Confirmation.aspx");

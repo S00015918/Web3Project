@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WebProject.Models;
 
 namespace WebProject
 {
@@ -69,6 +70,8 @@ namespace WebProject
 
         protected void btnCheckOut_Click(object sender, EventArgs e)
         {
+            ApplicationDbContext ctx = new ApplicationDbContext();
+
             Response.Redirect("Checkout1.aspx");
         }
     }

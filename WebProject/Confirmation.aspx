@@ -8,6 +8,7 @@
             <asp:Label ID="lblConfirm" runat="server"></asp:Label>
         </div>
     </div>
+    <br />
     <div class="form-group">
         <div class="col-xs-12">
             <asp:Button ID="btnContinue" runat="server" Text="Continue Shopping" 
