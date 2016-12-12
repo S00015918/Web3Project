@@ -31,6 +31,15 @@ namespace WebProject {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl navList;
         
         /// <summary>
+        /// spanCount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl spanCount;
+        
+        /// <summary>
         /// txtSearchMaster control.
         /// </summary>
         /// <remarks>

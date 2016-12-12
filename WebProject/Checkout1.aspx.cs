@@ -18,6 +18,7 @@ namespace WebProject
                 Master.HeaderText = "Customer Personal Details";
 
                 Master.AddBreadcrumbLink("/Default.aspx", "Home");
+                Master.AddBreadcrumbLink("/Cart.aspx", "Cart");
                 Master.AddCurrentPage("Customer Details");
 
                 bool val1 = (System.Web.HttpContext.Current.User != null) && System.Web.HttpContext.Current.User.Identity.IsAuthenticated;
@@ -41,14 +42,23 @@ namespace WebProject
                     Firstname.Visible = false;
                     Surname.Visible = false;
 
-                    ApplicationDbContext ctx = new ApplicationDbContext();
-                    ctx.Customers.Add(new Customer
-                    {
-                        City = City.Text,
-                        County = County.Text
-                        
-                    });
-                    ctx.SaveChanges();
+                    //ApplicationDbContext ctx = new ApplicationDbContext();
+                    //ctx.Customers.Add(new Customer
+                    //{
+                    //    City = City.Text,
+                    //    County = County.Text
+
+                    //});
+                    //ctx.SaveChanges();
+                    var customer = new Customer();
+
+                    customer.EmailAddress = Email.Text;
+                    customer.Address = Address.Text;
+                    customer.City = City.Text;
+                    customer.County = County.Text;
+                    customer.Phone = Phone.Text;
+                    Session["Customer"] = customer;
+                    Response.Redirect("~/Checkout2.aspx");
                 }
                 else
                 {
@@ -75,5 +85,6 @@ namespace WebProject
 
             //Response.Redirect("~/Order.aspx");
         }
+
     }
 }

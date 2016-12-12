@@ -13,16 +13,16 @@
             <asp:Label runat="server" ID="lblFirstname" AssociatedControlID="Firstname" CssClass="col-md-2 control-label">Firstname</asp:Label>
             <div class="col-md-10">
                 <asp:TextBox runat="server" ID="Firstname" CssClass="form-control" />
-                <asp:RequiredFieldValidator runat="server" ControlToValidate="Firstname"
-                    CssClass="text-danger" ErrorMessage="The firstname field is required." />
+                <%--<asp:RequiredFieldValidator runat="server" ControlToValidate="Firstname"
+                    CssClass="text-danger" ErrorMessage="The firstname field is required." />--%>
             </div>
         </div>
         <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="Surname" ID="lblSurname" CssClass="col-md-2 control-label">Surname</asp:Label>
             <div class="col-md-10">
                 <asp:TextBox runat="server" ID="Surname" CssClass="form-control" />
-                <asp:RequiredFieldValidator runat="server" ControlToValidate="Surname"
-                    CssClass="text-danger" ErrorMessage="The surname field is required." />
+                <%--<asp:RequiredFieldValidator runat="server" ControlToValidate="Surname"
+                    CssClass="text-danger" ErrorMessage="The surname field is required." />--%>
             </div>
         </div>
 

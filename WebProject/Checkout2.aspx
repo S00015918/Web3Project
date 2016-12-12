@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Checkout2.aspx.cs" Inherits="WebProject.Checkout2" %>
 <%@ MasterType VirtualPath="~/Site.Master" %>
 
-<asp:Content ContentPlaceHolderID="mainPlaceholder" runat="server">
+<asp:Content ContentPlaceHolderID="MainContent" runat="server">
     <br />
     <div class="form-horizontal">
 

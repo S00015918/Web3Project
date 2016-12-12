@@ -110,7 +110,7 @@ namespace WebProject
 
         protected void Page_PreRender(object sender, EventArgs e)
         {
-            //spanCount.InnerText = CartItemList.GetCart().Count.ToString();
+            spanCount.InnerText = CartItemList.GetCart().Count.ToString();
         }
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
         {

@@ -78,7 +78,7 @@ namespace WebProject
                 CartItem cartItem = cart[selectedProduct.ProductID];
 
                 //if item isn’t in cart, add it; otherwise, increase its quantity
-                if (txtQuantity.Text == null)
+                if (!string.IsNullOrWhiteSpace(txtQuantity.Text))
                 {
                     if (cartItem == null)
                     {

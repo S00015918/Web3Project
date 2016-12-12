@@ -76,7 +76,7 @@
                                 <p>
                                     <asp:Label ID="lblPosterPrice" runat="server" Text='<%# Eval("Price", "{0:c}")%>'></asp:Label>
                                 </p>
-                                <p><a href="#" class="btn btn-primary" id="addtoCart" onclick="AddToCart()" role="button">Add to cart</a> <a href="#" class="btn btn-default" role="button">Buy Now!</a></p>
+                                <p><a href="#" class="btn btn-primary" id="addtoCart" onclick="AddToCart()" role="button">Add to cart</a> <a href="Products.aspx" class="btn btn-default" role="button">Buy Now!</a></p>
                             </div>
                         </div>
                     </div>

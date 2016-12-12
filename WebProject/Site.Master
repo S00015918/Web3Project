@@ -56,13 +56,22 @@
                     <a class="navbar-brand" runat="server" href="~/">MonsterPosters</a>
                 </div>
                 <div class="navbar-collapse collapse">
+                    
                     <ul id="navList" runat="server" class="nav navbar-nav">
-                        <li><asp:HyperLink runat="server" NavigateUrl="~/Products">Browse Posters <span class="glyphicon glyphicon-picture"></span></asp:HyperLink></li>
-                        <li><a runat="server" href="~/About">About <span class="glyphicon glyphicon-info-sign"></span></a></li>
-                        <li><a runat="server" href="~/Contact">Contact <span class="glyphicon glyphicon-phone"></span></a></li>
-                        <li><a runat="server" href="~/Cart">Cart <span class="glyphicon glyphicon-shopping-cart"></span></a></li>
-                        <li><a runat="server" href="~/UploadPoster">Poster Upload <span class="glyphicon glyphicon-open"></span></a></li>
-                        <li><a runat="server" href="~/EditPoster">Customise <span class="glyphicon glyphicon-save"></span></a></li>
+                        
+                        <li class="dropdown">
+                            <asp:HyperLink runat="server" CssClass="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                Menu<span class="caret"></span>
+                                <ul class="dropdown-menu">
+                                <li><asp:HyperLink runat="server" NavigateUrl="~/Products">Browse Posters <span class="glyphicon glyphicon-picture text-right"></span></asp:HyperLink></li>
+                                <li><asp:HyperLink runat="server" NavigateUrl="~/About">About <span class="glyphicon glyphicon-info-sign text-right"></span></asp:HyperLink></li>
+                                <li><asp:HyperLink runat="server" NavigateUrl="~/Contact">Contact <span class="glyphicon glyphicon-phone text-right"></span></asp:HyperLink></li>
+                                <li><asp:HyperLink runat="server" NavigateUrl="~/Cart">Cart <span class="glyphicon glyphicon-shopping-cart text-right"></span><span id="spanCount" runat="server" class="badge"></span></asp:HyperLink></li>
+                                <li><asp:HyperLink runat="server" NavigateUrl="~/UploadPoster">Poster Upload <span class="glyphicon glyphicon-open text-right"></span></asp:HyperLink></li>
+                                <li><asp:HyperLink runat="server" NavigateUrl="~/EditPoster">Customise <span class="glyphicon glyphicon-save text-right"></span></asp:HyperLink></li>
+                                </ul>
+                            </asp:HyperLink>
+                        </li>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>

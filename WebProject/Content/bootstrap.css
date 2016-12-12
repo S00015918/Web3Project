@@ -18,6 +18,7 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 body {
+    padding-top: 50px;
   margin: 0;
 }
 article,
@@ -4170,6 +4171,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar {
   position: relative;
   min-height: 60px;
+  max-height: 100px;
   margin-bottom: 21px;
   border: 1px solid transparent;
 }
