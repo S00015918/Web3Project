@@ -13,15 +13,6 @@ namespace WebProject {
     public partial class EditPoster {
         
         /// <summary>
-        /// imageDisplay control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imageDisplay;
-        
-        /// <summary>
         /// posterUpload control.
         /// </summary>
         /// <remarks>
@@ -31,13 +22,13 @@ namespace WebProject {
         protected global::System.Web.UI.WebControls.FileUpload posterUpload;
         
         /// <summary>
-        /// btnUpload control.
+        /// btnUploadImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnUpload;
+        protected global::System.Web.UI.WebControls.Button btnUploadImage;
         
         /// <summary>
         /// outputLabel control.
@@ -47,6 +38,15 @@ namespace WebProject {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label outputLabel;
+        
+        /// <summary>
+        /// imageDisplay control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imageDisplay;
         
         /// <summary>
         /// filterList control.
@@ -65,5 +65,32 @@ namespace WebProject {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList sizeList;
+        
+        /// <summary>
+        /// borderList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList borderList;
+        
+        /// <summary>
+        /// lblSize control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSize;
+        
+        /// <summary>
+        /// lblBorder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblBorder;
     }
 }
